@@ -342,42 +342,156 @@ textarea {
 
 
 
-.image-gallery {
+/* Main Gallery Container */
+.image-gallary {
   display: flex;
-
-  gap: 0.5em; 
-  justify-content:space-around;
-  align-items: center;
-  
-
+  justify-content: space-between; /* Distribute images evenly */
+  flex-wrap: wrap; /* Allow images to wrap to the next row */
+  gap: 20px; /* Space between images */
+  padding: 20px; /* Add padding around the gallery */
+  background-color: #f7f7f7; /* Soft background color for the gallery */
+  border-radius: 10px; /* Rounded corners for the whole gallery */
 }
 
+/* Image Item Container */
 .image-item {
-  justify-content:space-between;
-  align-items: center;
-  display:flex;
-  flex-direction: column;
-  overflow: hidden; 
-  border-radius: 20px;
-  margin-top: 80px;
-  background-color: lightcoral;
-  
-  
+  flex: 1 1 30%; /* Allow images to resize but maintain a minimum size */
+  max-width: 400px; /* Maximum width for each image item */
+  display: flex;
+  justify-content: center; /* Center the image inside its container */
+  align-items: center; /* Center the image vertically */
+  overflow: hidden; /* Hide overflow for neat edges */
+  border-radius: 10px; /* Rounded corners for each image item */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover transition */
 }
 
-
+/* Styling for Image */
 .image-item img {
-  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+  width: 100%; /* Make the image fill the container width */
+  height: auto; /* Maintain the aspect ratio */
+  object-fit: cover; /* Ensures images fill the container properly */
+  border-radius: 10px; /* Optional: adds rounded corners to images */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow around images */
+  transition: transform 0.3s ease; /* Smooth image transition effect */
 }
 
-.image-item:hover img {
-  transform: scale(1.1); 
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
+/* Hover Effects for Image Item */
+.image-item:hover {
+  transform: translateY(-10px); /* Lift the item on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+}
+
+/* Hover Effects for Image */
+.image-item img:hover {
+  transform: scale(1.05); /* Slightly zoom the image on hover */
+}
+
+/* Media Query for Tablets and Medium Screens */
+@media (max-width: 768px) {
+  .image-gallary {
+      justify-content: center; /* Center gallery items on small screens */
+  }
+
+  .image-item {
+      flex: 1 1 45%; /* Allow two items per row on medium screens */
+  }
+}
+
+/* Media Query for Mobile Screens */
+@media (max-width: 480px) {
+  .image-item {
+      flex: 1 1 100%; /* Stack images in a single column on small screens */
+  }
 }
 
 
-.image-item img {
-  border-radius: 8px; 
-  border: 2px solid transparent; 
+/* Footer Styles */
+.footer {
+  background-color: #282c34; /* Dark background color for the footer */
+  color: #fff; /* White text color */
+  padding: 40px 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Footer Container */
+.footer-container {
+  display: flex;
+  justify-content: space-between; /* Space out the sections */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Footer Logo */
+.footer-logo img {
+  width: 120px; /* Set logo size */
+  height: auto;
+}
+
+/* Footer Links */
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin: 10px 0;
+}
+
+.footer-links ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+  color: #4caf50; /* Highlight links with a green color on hover */
+}
+
+/* Footer Social Icons */
+.footer-social a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 15px;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+  color: #4caf50; /* Green color on hover */
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #444; /* Divider line above the bottom text */
+}
+
+.footer-bottom p {
+  font-size: 14px;
+}
+
+/* Mobile Styling */
+@media (max-width: 768px) {
+  .footer-container {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .footer-logo {
+      margin-bottom: 20px;
+  }
+
+  .footer-links ul {
+      margin-bottom: 20px;
+  }
+
+  .footer-social a {
+      display: inline-block;
+      margin-bottom: 10px;
+  }
 }
 

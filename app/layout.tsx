@@ -29,6 +29,28 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+        <footer className="footer">
+    <div className="footer-container">
+       
+        <div className="footer-links">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div className="footer-social">
+            <a href="#" className="social-icon">Facebook</a>
+            <a href="#" className="social-icon">Twitter</a>
+            <a href="#" className="social-icon">Instagram</a>
+        </div>
+    </div>
+    <div className="footer-bottom">
+        <p>&copy; 2025 Your Company. All Rights Reserved.</p>
+    </div>
+</footer>
+
       </body>
     </html>
   );
